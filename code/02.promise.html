@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>promise</title>
+</head>
+
+<body>
+    <script>
+    // promise ,// future; // 就是一种格式，一种书写方式。
+    // resolve,表示异步操作成功，reject表示异步操作失败，它俩都是方法
+    var promise = new Promise(function(resolve,reject){
+        // 可以new Promimse这个对象创建完，下面的异步操作还没结束
+        // 买彩票
+       setTimeout(function(){
+         var data = '买彩票的结果';
+         // 假设已经成功了.
+         // ......
+         resolve(data); // 或者在这里写reject('xxx'),我在then方法的第二个参数处理失败的回调
+       },2000)
+    });
+
+    // then的第一个参数，是成功的回调函数，这个方法的参数是前面
+    // resolve(data),里面传入的数据
+    var promise2 = promise.then(function(obj){
+       //到这里表明已经中奖了
+       console.log(obj);
+       // 可以在这里继续买车
+       // 最终会把这个return值给promise2
+       return new Promise(function(resolve,reject){
+          // 买车
+          setTimeout(function(){
+            var data2='这是买车的结果';
+            // 假设买车已经成功了
+            resolve(data2);
+          },4000)
+       })
+    },function(err){
+      // 这里是失败的回调
+    })
+
+    // 买房的操作。
+    var promise3 = promise2.then(function(obj){
+      console.log(obj);
+    })
+
+///
+    function getData() {
+        // 假设买彩票是个异步的操作
+        setTimeout(function() {
+            var data = '买彩票的结果'
+                // 假设成功了，我们要买房,假设买房也是个异步操作
+            setTimeout(function() {
+                var data2 = '买房的结果';
+                // 假设买房成功了，我们要买车,假设买车也是个异步操作
+                setTimeout(function() {
+                    var data3 = '买车的结果';
+                    // 假设买房成功了，我们要当上CEO,假设这也是个异步操作
+                    setTimeout(function() {
+                        ///....
+                    })
+                })
+            })
+        })
+    }
+    // 
+    // $('..af').animate({
+    //     with: 100
+    // }, function() {
+    //     $('..af').animate({
+    //         with: 100
+    //     }, function() {
+    //         $('..af').animate({
+    //             with: 100
+    //         }, function() {
+    //             $('..af').animate({
+    //                 with: 100
+    //             }, function() {
+    //                 $('..af').animate({
+    //                     with: 100
+    //                 }, function() {
+    //                     $('..af').animate({
+    //                         with: 100
+    //                     }, function() {
+    //                         $('..af').animate({
+    //                             with: 100
+    //                         }, function() {
+    //                             $('..af').animate({
+    //                                 with: 100
+    //                             }, function() {
+    //                                 $('..af').animate({
+    //                                     with: 100
+    //                                 }, function() {
+    //                                     $('..af').animate({
+    //                                         with: 100
+    //                                     }, function() {
+
+    //                                     });
+    //                                 });
+    //                             });
+    //                         });
+    //                     });
+    //                 });
+    //             });
+    //         });
+    //     });
+    // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<ion-view id="cart" view-title="分享" >
+  <!-- 头部 -->
+  <header id="header">
+    <div class="header-left">
+      <div>
+        <span></span>
+      </div >
+    </div>
+    <div class="header-center">
+      <span>购物车</span>
+    </div>
+    <div class="header-right">
+      <span></span>
+    </div>
+  </header>
+  <ion-content class="scroll-content" scroll="true">
+
+    <div class="list">
+
+      <a class="item item-thumbnail-left" href="{{item.enjoyHref}}" ng-repeat="item in shareDate"  ng-click="getKey(item.id)">
+        <img src="{{item.src}}">
+        <h2>{{item.shareSkill}}</h2>
+        <p>{{item.shareName}}</p>
+      </a>
+
+
+
+    </div>
+
+  </ion-content>
+  <!-- 固定底边栏 -->
+
+
+</ion-view>

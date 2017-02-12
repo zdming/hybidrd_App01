@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+'use strict';
+
+// 2.promise方式
+// 新的promise对象
+var promise = new Promise(function(resolve, reject) {
+    // 异步操作
+    setTimeout(function() {
+        var data = '买彩票成功';
+        // 如果操作成功
+        if (true) {
+            resolve(data);
+        } else {
+            reject('异步操作失败');
+        }
+    });
+});
+var promise2 = promise.then(function(data) {
+    console.log(data);
+
+    // 准备去买房
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            var data2 = '买房的结果';
+            // 如果操作成功
+            resolve(data2);
+        });
+    });
+});
+
+var promise3 = promise2.then(function(data2){
+   // 这是买房成功的回调函数 
+   console.log(data2);
+   // 准备买房
+   return new Promise(function(resolve,reject){
+      setTimeout(function(){
+        var data3 = '买车的结果';
+        // 如果买车成功
+        resolve(data3);
+      });
+   });
+});
+
+promise3.then(function(data){
+  // 这是买车成功的回调函数
+  console.log(data);
+})
+
+// 1.普通方式
+function getData() {
+    setTimeout(function() {
+        // 假设data是异步操作中得到的数据,假设是买彩票的结果
+        var data = '买彩票的结果';
+        // 可能这里要写一些代码
+        // 假设已经中奖,准备去买房,假设买房也是个异步操作
+        setTimeout(function() {
+            var data2 = '买房的结果';
+            // 假设已经买房成功,准备买车，假设买车也是个异步操作
+            setTimeout(function() {
+                var data3 = '买车的结果'
+                    // 假设已经买车成功，准备当上CEO,假设当CEO也是个异步操作
+                setTimeout(function() {
+                    var data4 = '当CEO的结果';
+                });
+            });
+        });
+    });
+};
+// $().animatie({}, function() {
+//     $().animate({}, function() {
+//         $().animate({}, function() {
+//             $().animate({}, function() {
+//                 $().animate({}, function() {
+//                     $().animate({}, function() {
+//                         $().animate({}, function() {
+//                             $().animate({}, function() {
+//                                 $().animate({}, function() {
+//                                     $().animate({}, function() {
+
+//                                     })
+//                                 })
+//                             })
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
+</script>

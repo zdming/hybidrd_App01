@@ -1,0 +1,22 @@
+<ion-view id="cartMes" view-title="分享知识">
+    <!-- 头部 -->
+    <header id="header">
+        <div class="header-left">
+            <div ng-click="Fun_goBack()">
+                <span></span>
+            </div >
+        </div>
+        <div class="header-center">
+            <span>{{items.header}}</span>
+        </div>
+        <div class="header-right">
+            <span></span>
+        </div>
+    </header>
+    <ion-content class="has-header" scroll="true">
+        <h2>{{items.title}}</h2>
+        <img src="{{items.src}}" alt="{{items.alt}}"/>
+        <p ng-bind-html="items.data"></p>
+
+    </ion-content>
+</ion-view>

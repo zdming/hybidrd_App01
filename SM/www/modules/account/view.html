@@ -1,0 +1,38 @@
+<ion-view id="account" view-title="爱好">
+  <header id="header">
+    <div class="header-left">
+      <span></span>
+    </div>
+    <div class="header-center">
+      <span>兴趣</span>
+    </div>
+    <div class="header-right">
+      <span></span>
+    </div>
+  </header>
+  <ion-content scroll="true" class="has-header" >
+      <!--<div class="bannerBox"></div>-->
+    <!-- 轮播图-->
+    <div class="headerSlider">
+      <div id="headerSlider2" class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- 遍历的数据headerSlideData-->
+          <div class="swiper-slide" ng-repeat="item in headerSlideData">
+            <img alt="{{item.alt}}" ng-src="{{item.src}}">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+        <!-- 循环二维数组，勿忘track by $index-->
+        <div class="clearfix" ng-repeat="item in sportDate">
+          <a class="item">
+            <i class="{{item.iconClass}}"></i>
+            {{item.title}}
+          </a>
+          <a href="javaScript:;void(0)" ng-repeat="item2 in item.imgData track by $index">
+            <img class="{{item2.sportClass}}" src="{{item2.src}}" alt="{{item2.alt}}"/>
+          </a>
+        </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+#goodsList div,ul,li,h1,h2,h3,img,a{
+  font-family:'pinghei';
+  font-size:16px;
+  padding:0;
+  margin:0;
+  border:0;
+  list-style:none;
+  color:#666;
+  font-weight:300;
+}
+

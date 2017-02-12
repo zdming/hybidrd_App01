@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>angular 中的promise</title>
+    </head>
+    <body ng-app="myApp">
+    <div ng-controller="demoController"></div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+      angular.module('myApp',[])
+        .controller('demoController',function($scope,testFty){
+           var promise = testFty.getData();
+           promise.then(function(myData){
+              console.log(myData);
+           })
+           promise.then(function(myData){
+              console.log(myData);
+           })
+           promise.then(function(myData){
+              console.log(myData);
+           })
+        })
+        .factory('testFty',function($q,$timeout){
+          return {
+              getData:function(){
+                var deferred = $q.defer();
+                $timeout(function(){
+                  var data = {name:'小明',age:18};
+                  deferred.resolve(data);
+                });
+                return deferred.promise;
+              }
+
+          }
+        })
+    </script>
+    </body>
+</html>

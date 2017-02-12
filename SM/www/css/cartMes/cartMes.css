@@ -1,0 +1,23 @@
+#cartMes{
+    color:#9D9B9B;
+}
+#cartMes h2{
+    font-size: 20px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #EA746A;
+    font-family: 'hakuyoxingshu7000';
+}
+#cartMes img{
+    width: 100%;
+    background-size: cover;
+}
+#cartMes p{
+    height: 28px;
+    line-height: 28px;
+    padding: 0 15px;
+}
+#cartMes p span{
+    color: #FAA58B;
+}

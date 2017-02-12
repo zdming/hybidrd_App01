@@ -1,0 +1,29 @@
+<ion-view id="goodsList" view-title="项目">
+  <!-- 头部搜索部分 -->
+  <header id="header">
+    <div class="header-left">
+      <span></span>
+    </div>
+    <div class="header-center">
+      <span></span>
+    </div>
+    <div class="header-right">
+      <span></span>
+    </div>
+  </header>
+  <!-- 筛选导航部分 -->
+  <ion-content class="scroll-content">
+    <!--头部轮播图-->
+    <div class="headerSlider">
+      <div id="headerSlider" class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- 遍历的数据headerSlideData-->
+          <div class="swiper-slide" ng-repeat="item in headerSlideData">
+            <img alt="{{item.alt}}" ng-src="{{item.src}}">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

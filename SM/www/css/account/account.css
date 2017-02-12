@@ -1,0 +1,29 @@
+#account a.item{
+  color:#EA746A;
+  font-size: 20px;
+  text-align: center;
+  padding: 6px 0;
+  background-color: #F8F8F8;
+  border: 1px solid #F8F8F8;
+  overflow: visible;
+}
+#account img.sport2{
+  width: 64.9%;
+  height: 240px;
+  background-size: contain;
+  float: left;
+  border: 1px solid #F8F8F8;
+}
+#account img.sport{
+  width: 35%;
+  height: 120px;
+  background-size: contain;
+  float:left;
+  border: 1px solid #F8F8F8;
+}
+#account .bannerBox{
+  width: 100%;
+  height: 200px;
+  background: url("../../img/account/account_topPic.jpg") no-repeat;
+  background-size:cover;
+}

@@ -1,0 +1,35 @@
+#category div,ul,li,h1,h2,h3,img,a{
+  font-family:'pinghei';
+  font-size:16px;
+  padding:0;
+  margin:0;
+  border:0;
+  list-style:none;
+  color:#666;
+  font-weight:300;
+}
+
+#category{
+  background-color: #F8F8F8;
+}
+#category .projectShow{
+  padding: 10px 0;
+}
+#category #headerSlider img{
+  width: 100%;
+}
+#category .projectShow li{
+  width: 100%;
+  height: 200px;
+  margin:0 auto;
+}
+#category #headerSlider{
+  height: 200px;
+}
+#category .projectShow img{
+  display: inline-block;
+  width: 44%;
+  margin: 6px 3%;
+  height: 120px;
+  border: 2px solid #DDDDDD;
+}

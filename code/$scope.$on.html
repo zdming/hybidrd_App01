@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>$on</title>
+    </head>
+    <body ng-app="myApp">
+      <div ng-controller="fatherController">
+        <button ng-click="sayHello()">我是父的按钮</button>
+        <div ng-controller="sonController">
+            <button ng-click="toFather()">我是子级的按钮</button>
+        </div>
+      </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+      // 1.创建模块
+      var app = angular.module('myApp',[]);
+
+      // 2.创建控制器
+      app.controller('fatherController',function($scope){
+        $scope.sayHello=function(){
+          // 在这里通知子控制器，去做一些事情
+          $scope.$broadcast('sayHello');
+
+          //  ion-view
+          //  '$ionicView.beforeEnter'
+          //  '$ionicView.enter'
+          //  '$ionicView.afterEnter'
+        }
+        $scope.$on('toFather',function(){
+          console.log('子级通知我要做一些事情');
+        })
+      })
+      app.controller('sonController',function($scope){
+        // 子级控制器需要监听事件
+        $scope.$on('sayHello',function(arg){
+          console.log('父级通知我做一些事情');
+
+          // 在这里做具体的事情
+        });
+
+        $scope.toFather=function(){
+          $scope.$emit('toFather');
+        }
+      })
+    </script>
+    </body>
+</html>

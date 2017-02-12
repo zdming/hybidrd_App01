@@ -1,0 +1,42 @@
+<ion-view id="cartMenu" view-title="分享菜单">
+    <!-- 头部 -->
+    <header id="header">
+        <div class="header-left">
+            <div ng-click="goBack()">
+                <span></span>
+            </div >
+        </div>
+        <div class="header-center">
+            <span>{{headerDate.header}}</span>
+        </div>
+        <div class="header-right">
+            <span></span>
+        </div>
+    </header>
+    <ion-content class="has-header">
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+            <ion-item ng-repeat="item in items"
+                      ng-click="getSonKey(item.id)"
+                      item="item"
+                      href="#/cartMes"
+                      class="item-remove-animate">
+                <img src="{{item.src}}" alt="{{item.alt}}" class="mg"/>
+                {{item.title}}
+                <ion-delete-button class="ion-minus-circled"
+                                   ng-click="onItemDelete(item)">
+                </ion-delete-button>
+                <ion-option-button class="button-assertive"
+                                   ng-click="onItemDelete(item)">
+                    删除
+                </ion-option-button>
+                <ion-option-button class="button-calm"
+                                   ng-click="share(item)">
+                    分享
+                </ion-option-button>
+                <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,76 @@
+
+#home a{
+  font-family: MV Boli;
+  color:#ffffff;
+}
+.wb-layout{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-size:contain;
+  background: url("../../img/home/mu.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+}
+.lay-left{
+  width: 30%;
+  height: 87%;
+  padding-left: 15px;
+}
+.lay-middle{
+  padding-top: 70px;
+  width: 30%;
+  height: 87%;
+}
+.lay-right{
+  width: 30%;
+  height: 87%;
+}
+.lay-left-text{
+  width: 100%;
+  height: 50%;
+  transform: translate(20%,0);
+}
+.lay-left-text p{
+  width: 100%;
+  height: 14%;
+  font-size: 35px;
+  font-family: Segoe Script;
+}
+.lay-left-ul{
+  width: 100%;
+  height: 50%;
+  transform: translate(20%,-10%);
+}
+.lay-middle-ul{
+  width: 100%;
+  height: 60%;
+  transform:translate(22%,40%)
+}
+.lay-right-ul{
+  width: 100%;
+  height: 50%;
+  transform:translate(23%,20%)
+}
+.lay-left-ul li,
+.lay-middle-ul li,
+.lay-right li
+{
+  text-align: center;
+  width: 100%;
+  height: 33%;
+  border: 2px ridge #E7E7A6;
+  border-radius: 10px;
+  margin-top: -1px;
+}
+.lay-left-ul li a,
+.lay-middle-ul li a,
+.lay-right li a
+{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 16vh;
+  font-size: 18px;
+}
+
